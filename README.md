@@ -84,4 +84,4 @@ MIT License - feel free to use this code for your own projects.
 
 ## Author
 
-Created by [Your Name] - A passionate web developer focusing on creating professional and user-friendly web applications.
+Created by ghost - A passionate web developer focusing on creating professional and user-friendly web applications.
