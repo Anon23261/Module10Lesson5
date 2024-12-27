@@ -1,0 +1,318 @@
+:root {
+    /* Theme: Default */
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f8fafc;
+    --text-color: #2c3e50;
+    --border-color: #e2e8f0;
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Theme: Light */
+[data-theme="light"] {
+    --primary-color: #60a5fa;
+    --secondary-color: #34d399;
+    --background-color: #ffffff;
+    --text-color: #475569;
+    --border-color: #e5e7eb;
+}
+
+/* Theme: Dark */
+[data-theme="dark"] {
+    --primary-color: #2563eb;
+    --secondary-color: #059669;
+    --background-color: #1e293b;
+    --text-color: #f1f5f9;
+    --border-color: #334155;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    transition: background-color var(--transition-speed),
+                color var(--transition-speed);
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+}
+
+.theme-switcher {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.theme-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.theme-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.theme-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.control-panel {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--box-shadow);
+}
+
+.control-panel h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.control-group {
+    margin-bottom: 1.5rem;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.control-group input[type="range"],
+.control-group input[type="color"],
+.control-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background: white;
+}
+
+.value-display {
+    display: block;
+    text-align: right;
+    font-size: 0.875rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.demo-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--box-shadow);
+}
+
+.interactive-elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.demo-box {
+    height: 150px;
+    background: var(--primary-color);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    user-select: none;
+}
+
+.demo-box span {
+    font-weight: 500;
+}
+
+.demo-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+}
+
+.demo-box.gradient {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+.demo-box.animated {
+    animation: pulse 2s infinite;
+}
+
+.effects-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.effect-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.effect-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.css-output {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--box-shadow);
+    margin-top: 2rem;
+}
+
+.css-output pre {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.copy-btn {
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.copy-btn:hover {
+    background: var(--secondary-color);
+}
+
+.context-menu {
+    display: none;
+    position: fixed;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    padding: 0.5rem 0;
+    z-index: 1000;
+}
+
+.context-menu ul {
+    list-style: none;
+}
+
+.context-menu li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+}
+
+.context-menu li:hover {
+    background: var(--background-color);
+    color: var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.hint {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@keyframes flip {
+    0% { transform: perspective(400px) rotateY(0); }
+    100% { transform: perspective(400px) rotateY(360deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .app-container {
+        padding: 1rem;
+    }
+
+    .interactive-elements {
+        grid-template-columns: 1fr;
+    }
+}

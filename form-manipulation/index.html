@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Form System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Advanced Form System</h1>
+            <p class="subtitle">Interactive Form with Real-time Validation</p>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <form id="contactForm" class="smart-form" novalidate>
+                    <div class="form-section">
+                        <h2>Personal Information</h2>
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="name" name="name" 
+                                       data-validation="required|minLength:2"
+                                       data-error="Please enter your full name (minimum 2 characters)"
+                                       autocomplete="name">
+                                <span class="validation-icon"></span>
+                            </div>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-wrapper">
+                                <input type="email" id="email" name="email" 
+                                       data-validation="required|email"
+                                       data-error="Please enter a valid email address"
+                                       autocomplete="email">
+                                <span class="validation-icon"></span>
+                            </div>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-wrapper">
+                                <input type="tel" id="phone" name="phone" 
+                                       data-validation="phone"
+                                       data-error="Please enter a valid phone number"
+                                       placeholder="(XXX) XXX-XXXX"
+                                       autocomplete="tel">
+                                <span class="validation-icon"></span>
+                            </div>
+                            <div class="error-message"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Message Details</h2>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <div class="input-wrapper">
+                                <select id="subject" name="subject" 
+                                        data-validation="required"
+                                        data-error="Please select a subject">
+                                    <option value="">Select a subject...</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="validation-icon"></span>
+                            </div>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <div class="input-wrapper">
+                                <textarea id="message" name="message" rows="5"
+                                          data-validation="required|minLength:10"
+                                          data-error="Please enter your message (minimum 10 characters)"></textarea>
+                                <span class="validation-icon"></span>
+                            </div>
+                            <div class="error-message"></div>
+                            <div class="character-count">0/500</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent" name="consent"
+                                       data-validation="required"
+                                       data-error="You must agree to the terms">
+                                <span class="checkbox-custom"></span>
+                                I agree to the <a href="#" class="terms-link">Terms and Conditions</a>
+                            </label>
+                            <div class="error-message"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="submissionModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Form Submitted Successfully!</h2>
+                    <div id="submissionDetails"></div>
+                    <button class="btn btn-primary modal-close">Close</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Advanced Form System - Created with modern web technologies</p>
+        </footer>
+    </div>
+
+    <script src="formValidator.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

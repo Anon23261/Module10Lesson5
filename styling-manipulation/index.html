@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Dynamic Styling System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Dynamic Styling Playground</h1>
+            <p class="subtitle">Interactive CSS Manipulation with JavaScript</p>
+            
+            <div class="theme-switcher">
+                <button class="theme-btn" data-theme="light">Light</button>
+                <button class="theme-btn active" data-theme="default">Default</button>
+                <button class="theme-btn" data-theme="dark">Dark</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="control-panel">
+                <h2>Style Controls</h2>
+                
+                <div class="control-group">
+                    <label>Background Color</label>
+                    <input type="color" id="bgColorPicker" value="#3498db">
+                </div>
+
+                <div class="control-group">
+                    <label>Border Radius</label>
+                    <input type="range" id="radiusSlider" min="0" max="50" value="5">
+                    <span class="value-display">5px</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Scale</label>
+                    <input type="range" id="scaleSlider" min="50" max="150" value="100">
+                    <span class="value-display">100%</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Rotation</label>
+                    <input type="range" id="rotationSlider" min="0" max="360" value="0">
+                    <span class="value-display">0°</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Animation Speed</label>
+                    <select id="animationSpeed">
+                        <option value="0.5s">Fast</option>
+                        <option value="1s" selected>Normal</option>
+                        <option value="2s">Slow</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="demo-section">
+                <div class="interactive-elements">
+                    <div class="demo-box" id="box1">
+                        <span>Hover Me</span>
+                    </div>
+                    
+                    <div class="demo-box animated" id="box2">
+                        <span>Click Me</span>
+                    </div>
+                    
+                    <div class="demo-box gradient" id="box3">
+                        <span>Double Click Me</span>
+                    </div>
+                    
+                    <div class="demo-box interactive" id="box4">
+                        <span>Drag Me</span>
+                    </div>
+                    
+                    <div class="demo-box" id="box5">
+                        <span>Right Click Me</span>
+                    </div>
+                </div>
+
+                <div class="effects-panel">
+                    <h3>Special Effects</h3>
+                    <button class="effect-btn" data-effect="pulse">Pulse</button>
+                    <button class="effect-btn" data-effect="shake">Shake</button>
+                    <button class="effect-btn" data-effect="flip">Flip</button>
+                    <button class="effect-btn" data-effect="bounce">Bounce</button>
+                    <button class="effect-btn" data-effect="swing">Swing</button>
+                </div>
+            </section>
+        </main>
+
+        <div class="css-output">
+            <h3>Generated CSS</h3>
+            <pre><code id="cssOutput">/* CSS will be displayed here */</code></pre>
+            <button id="copyCss" class="copy-btn">Copy CSS</button>
+        </div>
+
+        <div id="contextMenu" class="context-menu">
+            <ul>
+                <li data-action="rotate">Rotate 90°</li>
+                <li data-action="scale">Scale 1.5x</li>
+                <li data-action="reset">Reset Styles</li>
+                <li data-action="animate">Add Animation</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Advanced Dynamic Styling System - Created with modern web technologies</p>
+            <p class="hint">Try right-clicking elements for more options!</p>
+        </footer>
+    </div>
+
+    <script src="styleManager.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

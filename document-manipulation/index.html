@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Product Catalog System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            max-width: 300px;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1>Product Catalog</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                <select id="sortSelect" class="sort-select">
+                    <option value="name">Sort by Name</option>
+                    <option value="price">Sort by Price</option>
+                    <option value="category">Sort by Category</option>
+                </select>
+            </div>
+        </header>
+
+        <main>
+            <div class="filters">
+                <h2>Filters</h2>
+                <div class="filter-group">
+                    <label for="priceRange">Price Range:</label>
+                    <input type="range" id="priceRange" min="0" max="2000" step="100" value="2000">
+                    <span id="priceValue">$2000</span>
+                </div>
+                <div class="filter-group">
+                    <label>Categories:</label>
+                    <div id="categoryFilters" class="category-filters"></div>
+                </div>
+            </div>
+
+            <div id="productContainer" class="product-grid">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </main>
+
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Advanced Product Catalog System - Created with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="productManager.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
